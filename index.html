@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pase de Abordaje VIP</title>
+    <!-- Fuentes y estilos -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- SweetAlert2 para el pop-up profesional -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --ticket-bg: #1e293b;
+            --gold: #fbbf24;
+            --text-light: #f8fafc;
+            --text-dim: #94a3b8;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-light);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        .ticket-container {
+            background-color: var(--ticket-bg);
+            border-radius: 20px;
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.5), 0 8px 10px -6px rgba(0, 0, 0, 0.3);
+            width: 100%;
+            max-width: 400px;
+            overflow: hidden;
+            position: relative;
+            border: 1px solid #334155;
+        }
+
+        .header {
+            background-color: var(--gold);
+            color: #000;
+            padding: 20px;
+            text-align: center;
+            border-bottom: 2px dashed var(--bg-color);
+        }
+
+        .header h1 {
+            margin: 0;
+            font-size: 1.2rem;
+            font-weight: 800;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .header p {
+            margin: 5px 0 0;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        .content {
+            padding: 25px 20px;
+        }
+
+        .route {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 25px;
+        }
+
+        .city {
+            text-align: center;
+            width: 40%;
+        }
+
+        .city h2 {
+            margin: 0;
+            font-size: 1.8rem;
+            color: var(--gold);
+        }
+
+        .city p {
+            margin: 5px 0 0;
+            font-size: 0.75rem;
+            color: var(--text-dim);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .plane-icon {
+            color: var(--text-dim);
+            font-size: 1.5rem;
+        }
+
+        .divider {
+            height: 1px;
+            background-color: #334155;
+            margin: 20px 0;
+        }
+
+        .section-title {
+            font-size: 0.75rem;
+            color: var(--text-dim);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 10px;
+        }
+
+        .passenger-list {
+            margin-bottom: 20px;
+        }
+
+        .passenger {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+            font-size: 0.95rem;
+            font-weight: 600;
+        }
+
+        .passenger i {
+            color: var(--gold);
+            margin-right: 10px;
+            width: 20px;
+            text-align: center;
+        }
+
+        .terms {
+            font-size: 0.7rem;
+            color: var(--text-dim);
+            line-height: 1.5;
+            text-align: center;
+            font-style: italic;
+            margin-top: 25px;
+        }
+
+        .action-container {
+            padding: 20px;
+            background-color: #0f172a;
+            text-align: center;
+            border-top: 2px dashed #334155;
+        }
+
+        .btn-confirm {
+            background-color: var(--gold);
+            color: #000;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 10px;
+            font-size: 1rem;
+            font-weight: 800;
+            font-family: 'Montserrat', sans-serif;
+            cursor: pointer;
+            width: 100%;
+            text-transform: uppercase;
+            transition: transform 0.2s, box-shadow 0.2s;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .btn-confirm:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 15px -3px rgba(251, 191, 36, 0.4);
+        }
+
+        .btn-confirm:active {
+            transform: translateY(0);
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="ticket-container">
+        <div class="header">
+            <h1><i class="fa-solid fa-star"></i> Aerolíneas Nuevos Comienzos</h1>
+            <p>PASE DE ABORDAJE VIP - CLASE ALFA</p>
+        </div>
+
+        <div class="content">
+            <div class="route">
+                <div class="city">
+                    <h2>CJS</h2>
+                    <p>Ciudad Juárez, CHIH</p>
+                </div>
+                <div class="plane-icon">
+                    <i class="fa-solid fa-plane"></i>
+                </div>
+                <div class="city">
+                    <h2>VDB</h2>
+                    <p>Valle de Bravo, MEX</p>
+                </div>
+            </div>
+
+            <div class="divider"></div>
+
+            <div class="section-title">Manifiesto de Vuelo</div>
+            <div class="passenger-list">
+                <div class="passenger">
+                    <i class="fa-solid fa-crown"></i> Karla (Titular del Vuelo)
+                </div>
+                <div class="passenger">
+                    <i class="fa-solid fa-ticket"></i> Ailyn (Pasajera VIP)
+                </div>
+                <div class="passenger">
+                    <i class="fa-solid fa-ticket"></i> Alejandra (Pasajera VIP)
+                </div>
+                <div class="passenger">
+                    <i class="fa-solid fa-shield-halved"></i> Juanito (Jefe de Seguridad)
+                </div>
+            </div>
+
+            <div class="divider"></div>
+
+            <div class="section-title">Detalles de la Reserva</div>
+            <div class="passenger" style="font-size: 0.85rem; font-weight: 400;">
+                <i class="fa-regular fa-calendar"></i> Fecha: Cuando la jefa diga
+            </div>
+            <div class="passenger" style="font-size: 0.85rem; font-weight: 400;">
+                <i class="fa-solid fa-couch"></i> Fila: 1 (Asientos A, B, C y D)
+            </div>
+
+            <p class="terms">
+                * Equipaje permitido: Solo buenas vibras, ganas de una vida tranquila y cero estrés. El piloto se encarga de todo lo demás.
+            </p>
+        </div>
+
+        <div class="action-container">
+            <button class="btn-confirm" onclick="confirmarVuelo()">
+                <i class="fa-solid fa-check-double"></i> Confirmar Mudanza
+            </button>
+        </div>
+    </div>
+
+    <script>
+        function confirmarVuelo() {
+            Swal.fire({
+                title: '¡Equipaje Aprobado! ✈️',
+                text: "Permiso concedido por la jefa menor. Vayan haciendo las maletas que las puertas en Valle de Bravo ya están abiertas para ustedes cuatro. Nos vemos pronto.",
+                icon: 'success',
+                confirmButtonText: 'Entendido',
+                confirmButtonColor: '#fbbf24',
+                background: '#1e293b',
+                color: '#f8fafc',
+                customClass: {
+                    confirmButton: 'btn-confirm-swal'
+                }
+            });
+        }
+    </script>
+</body>
+</html>
