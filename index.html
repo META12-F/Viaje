@@ -176,6 +176,18 @@
             transform: translateY(0);
         }
 
+        /* Estilo para el texto romántico del pop-up */
+        .swal-romantic-text {
+            font-size: 0.95rem;
+            line-height: 1.6;
+            text-align: justify;
+            margin-top: 10px;
+        }
+        
+        .swal-romantic-text strong {
+            color: var(--gold);
+        }
+
     </style>
 </head>
 <body>
@@ -215,7 +227,7 @@
                     <i class="fa-solid fa-ticket"></i> Alejandra (Pasajera VIP)
                 </div>
                 <div class="passenger">
-                    <i class="fa-solid fa-shield-halved"></i> Juanito (Jefe de Seguridad)
+                    <i class="fa-solid fa-paper-plane"></i> Juanito (Capitán de Aventuras)
                 </div>
             </div>
 
@@ -223,14 +235,14 @@
 
             <div class="section-title">Detalles de la Reserva</div>
             <div class="passenger" style="font-size: 0.85rem; font-weight: 400;">
-                <i class="fa-regular fa-calendar"></i> Fecha: Cuando la jefa diga
+                <i class="fa-regular fa-calendar"></i> Fecha: Cuando tú estés lista
             </div>
             <div class="passenger" style="font-size: 0.85rem; font-weight: 400;">
                 <i class="fa-solid fa-couch"></i> Fila: 1 (Asientos A, B, C y D)
             </div>
 
             <p class="terms">
-                * Equipaje permitido: Solo buenas vibras, ganas de una vida tranquila y cero estrés. El piloto se encarga de todo lo demás.
+                * Equipaje permitido: Solo buenas vibras, ganas de una vida tranquila y cero estrés. El piloto promete encargarse de todo lo demás.
             </p>
         </div>
 
@@ -244,10 +256,16 @@
     <script>
         function confirmarVuelo() {
             Swal.fire({
-                title: '¡Equipaje Aprobado! ✈️',
-                text: "Permiso concedido por la jefa menor. Vayan haciendo las maletas que las puertas en Valle de Bravo ya están abiertas para ustedes cuatro. Nos vemos pronto.",
-                icon: 'success',
-                confirmButtonText: 'Entendido',
+                title: '¡Vuelo Confirmado! ✈️',
+                html: `
+                    <div class="swal-romantic-text">
+                        Permiso concedido. Ve haciendo las maletas, porque el día que aterricen aquí será oficialmente <strong>el primer día del resto de nuestras vidas</strong>.<br><br>
+                        Quiero que sepas que en mí tienen un refugio seguro. Prometo poner todo mi esfuerzo, mi corazón y hacer todo lo que esté en mis manos para cuidarlos, protegerlos y verte siempre con esa sonrisa que me da tanta paz.<br><br>
+                        <strong>Valle de Bravo ya los está esperando... y yo también.</strong>
+                    </div>
+                `,
+                icon: 'none', /* Quitamos el ícono genérico para que el texto sea el protagonista */
+                confirmButtonText: 'Te quiero',
                 confirmButtonColor: '#fbbf24',
                 background: '#1e293b',
                 color: '#f8fafc',
